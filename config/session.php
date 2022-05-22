@@ -161,8 +161,8 @@ return [
     |
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE', false),
-
+    //'secure' => env('SESSION_SECURE_COOKIE', false),
+    'secure' => env('SESSION_SECURE_COOKIE', null),
     /*
     |--------------------------------------------------------------------------
     | HTTP Access Only

@@ -12,16 +12,16 @@
               <p class="text-white fw-bold mb-6">Product</p>
               <ul class="list-unstyled">
                 <li class="mb-3"><a class="small text-muted text-decoration-none" href="#">Search</a></li>
-                <li class="mb-3"><a class="small text-muted text-decoration-none" href="#">Blog</a></li>
-                <li class="mb-3"><a class="small text-muted text-decoration-none" href="#">Gallery</a></li>
+                <li class="mb-3"><a class="small text-muted text-decoration-none" href="/blog">Blog</a></li>
+                <li class="mb-3"><a class="small text-muted text-decoration-none" href="/gallery">Gallery</a></li>
               </ul>
             </div>
             <div class="col-12 col-sm-6 col-lg-auto mb-8 mb-lg-0">
               <p class="text-white fw-bold mb-6">Help</p>
               <ul class="list-unstyled">
-                <li class="mb-3"><a class="small text-muted text-decoration-none" href="#">FAQ</a></li>
+                <li class="mb-3"><a class="small text-muted text-decoration-none" href="/faq">FAQ</a></li>
                 <li class="mb-3"><a class="small text-muted text-decoration-none" href="/aboutus">About Us</a></li>
-                <li class="mb-3"><a class="small text-muted text-decoration-none" href="#">Contact Us</a></li>
+                <li class="mb-3"><a class="small text-muted text-decoration-none" href="/contact">Contact Us</a></li>
               </ul>
             </div>
             <div class="col-12 col-sm-6 col-lg-auto mb-8 mb-lg-0">

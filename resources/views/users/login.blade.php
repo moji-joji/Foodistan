@@ -27,18 +27,39 @@
     <div class="container">
       <div class="mw-xl mx-auto text-center">
         <div class="py-12 px-12 bg-white shadow-lg text-center">
-          <form action="#">
-            <a href="/">
-                <img src="cronos-assets/logos/food-2-logo-svg-vector.svg" alt="" width="132">
-
-            </a>
-            <h3 class="mt-6 mb-8">Sign in to your account</h3>
-            <input class="form-control mb-6" type="email" placeholder="E-mail address">
-            <input class="form-control mb-6" type="password" placeholder="Password">
-            <button class="btn btn-primary mb-6 w-100">Sign In</button>
-            <a class="small text-decoration-none text-muted" href="#">Forgot password?</a>
+          <a href="/">
+            <img src="cronos-assets/logos/food-2-logo-svg-vector.svg" alt="" width="132">
             
-          </form>
+          </a>
+          <form method="POST" action="/login/authenticate">
+            @csrf
+      
+             <h3 class="mt-6 mb-8">Login to your account</h3>
+            
+           <div class="mb-6">
+             <input class="form-control mb-6" type="email" placeholder="Your Email" name="email" value="{{old('email')}}">
+          
+           </div>
+           <div class="mb-6">
+             <input class="form-control mb-6" type="password" placeholder="Password" name="password" value="{{old('password')}}">
+             @if(session("message"))
+              <div class="text-danger">
+                {{session("message")}}
+              
+             @endif
+           </div>
+     
+
+
+          <div class="d-flex flex-column justify-content-start">
+
+            
+            <button class="btn btn-primary w-10 my-2" type="submit">Login</button>
+            <a href="/recover" class=" my-2 text-warning">Forgot password</a>
+            
+            <div class="text-muted my-2">Don't have an account? <a href="/register" class="bold">Sign up</a></div>
+          </div>
+           </form>
         </div>
       </div>
     </div>

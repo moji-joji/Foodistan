@@ -16,9 +16,13 @@
 </head>
 
 <body>
-  <div class="">
-
-    <section class="position-relative pb-20" style="background-image: url('cronos-assets/images/homepage-hero.jpg'); background-size: cover; background-repeat: no-repeat;">
+  @auth
+  <div class="bg-primary text-light login-msg">You are logged in</div>
+  {{-- {{-- @else  --}}
+    @endauth  
+    <div class="">
+      
+      <section class="position-relative pb-20" style="background-image: url('cronos-assets/images/homepage-hero.jpg'); background-size: cover; background-repeat: no-repeat;">
       <div class="position-absolute top-0 bottom-0 start-0 end-0 bg-dark" style="opacity: 80%;"></div>
       <div class="position-relative">
         <nav class="navbar navbar-expand-lg navbar-dark py-5 mb-10 mb-lg-16">
@@ -33,14 +37,33 @@
               </svg>
             </button>
             <ul class="d-none d-lg-flex position-absolute top-50 start-50 translate-middle navbar-nav">
+              
+               <li class="nav-item"><a class="nav-link" href="#">Search</a></li>
+
               <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Faq</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>
+              <li class="nav-item"><a class="nav-link" href="/faq">Faq</a></li>
+              <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
               <li class="nav-item"><a class="nav-link" href="/aboutus">About</a></li>
 
             </ul>
-            <div class="d-none d-lg-block"><a class="btn text-light" href="/signin-page">Sign In</a><a class="btn btn-secondary" href="/signup-page">Sign Up</a></div>
+            @auth
+            <div class="d-none d-lg-block">
+              
+              <form class="inline" method="POST" action="/logout">
+                @csrf
+                <button type="submit" class="btn btn-warning">
+                   Logout
+                </button>
+              </form>
+
+          
+            </div>         
+            @else
+            <div class="d-none d-lg-block">
+              <a class="btn text-light" href="/login">Log In</a>
+              <a class="btn btn-secondary" href="/register">Sign Up</a></div>
+            @endauth
           </div>
         </nav>
         <div class="container">
@@ -103,20 +126,31 @@
               <img src="cronos-assets/logos/food-2-logo-svg-vector.svg" alt="" width="32">
 
             </a>
-            <button class="navbar-close btn-close" type="button" aria-label="Close"></button>
+            <button class="navbar-close btn-close " type="button" aria-label="Close"></button>
           </div>
           <div>
             <ul class="nav flex-column">
               <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Faq</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>
+              <li class="nav-item"><a class="nav-link" href="/faq">Faq</a></li>
+              <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
               <li class="nav-item"><a class="nav-link" href="/aboutus">About</a></li>
             </ul>
           </div>
           <div class="mt-auto">
-            <div class="py-6"><a class="w-100 btn btn-primary mb-2" href="/signin-page">Sign In</a><a class="w-100 btn btn-secondary" href="/signup-page">Sign Up</a></div>
+            @auth
+            <form class="inline" method="POST" action="/logout">
+              @csrf
+              <button type="submit" class="btn btn-warning w-100">
+                 Logout
+              </button>
+            </form>
+
+            @else
+            <div class="py-6"><a class="w-100 btn btn-primary mb-2" href="/login">Log In</a><a class="w-100 btn btn-secondary" href="/register">Sign Up</a></div>
+@endauth
             <p class="mb-4 small text-center text-muted">© 2022 All rights reserved.</p>
+
           </div>
         </nav>
       </div>
@@ -264,7 +298,9 @@
 
   </div>
   <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/main.js"></script>
+
 </body>
 
 </html>

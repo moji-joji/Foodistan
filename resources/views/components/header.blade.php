@@ -1,7 +1,8 @@
 <nav class="position-relative navbar navbar-expand-lg navbar-light py-5">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="cronos-assets/logos/cronos-logo.svg" alt="" width="132">
+      <a class="navbar-brand" href="/">
+        <img src="cronos-assets/logos/food-2-logo-svg-vector.svg" alt="" width="32">
+<strong>             Foodistan </strong>
       </a>
       <button class="btn p-0 d-lg-none navbar-burger">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -9,43 +10,64 @@
         </svg>
       </button>
       <ul class="d-none d-lg-flex position-absolute top-50 start-50 translate-middle navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Faq</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Search</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="faq">Faq</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
         <li class="nav-item"><a class="nav-link" href="/aboutus">About</a></li>
       </ul>
-      <div class="d-none d-lg-flex" action="">
-        <div class="input-group">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-secondary" type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px;height: 24px">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-            </svg>
+      @auth
+      <div class="d-none d-lg-block">
+        
+        <form class="inline" method="POST" action="/logout">
+          @csrf
+          <button type="submit" class="btn btn-warning">
+             Logout
           </button>
-        </div>
-      </div>
+        </form>
+
+    
+      </div>         
+      @else
+      <div class="d-none d-lg-block">
+        <a class="btn text-primary" href="/login">Log In</a>
+        <a class="btn btn-secondary" href="/register">Sign Up</a></div>
+      @endauth
     </div>
     <div class="d-none navbar-menu position-fixed top-0 start-0 bottom-0 w-75 mw-sm" style="z-index: 9999;">
       <div class="navbar-backdrop position-fixed top-0 start-0 end-0 bottom-0 bg-primary" style="opacity: 90%;"></div>
       <nav class="position-relative h-100 w-100 d-flex flex-column py-6 px-6 navbar-light bg-white overflow-auto">
-        <div class="d-flex align-items-center mb-10">
-          <a class="me-auto navbar-brand" href="#">
-            <img src="cronos-assets/logos/cronos-logo.svg" alt="" width="132">
-          </a>
-          <button class="navbar-close btn-close" type="button" aria-label="Close"></button>
-        </div>
+        <a class="navbar-brand" href="/">
+          <img src="cronos-assets/logos/food-2-logo-svg-vector.svg" alt="" width="32">
+  <strong>             Foodistan </strong>
+        </a>
         <div>
           <ul class="nav flex-column">
-            <li class="nav-item mb-4"><a class="nav-link" href="#">About</a></li>
-            <li class="nav-item mb-4"><a class="nav-link" href="#">Company</a></li>
-            <li class="nav-item mb-4"><a class="nav-link" href="#">Services</a></li>
-            <li class="nav-item mb-4"><a class="nav-link" href="#">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Search</a></li>
+
+            <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="faq">Faq</a></li>
+            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="/aboutus">About</a></li>
           </ul>
         </div>
         <div class="mt-auto">
-          <div class="py-6"><a class="w-100 btn btn-primary" href="#">Contact Us</a></div>
-          <p class="mb-4 small text-center text-muted">© 2021 All rights reserved.</p>
+          @auth
+          <form class="inline" method="POST" action="/logout">
+            @csrf
+            <button type="submit" class="btn btn-warning w-100">
+               Logout
+            </button>
+          </form>
+
+          @else
+          <div class="py-6"><a class="w-100 btn btn-primary mb-2" href="/login">Log In</a><a class="w-100 btn btn-secondary" href="/register">Sign Up</a></div>
+@endauth
+          <p class="mb-4 small text-center text-muted">© 2022 All rights reserved.</p>
+
         </div>
       </nav>
     </div>

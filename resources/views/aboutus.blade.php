@@ -26,43 +26,18 @@
           <div class="row">
             <div class="col-12 col-lg-6">
               <div class="mw-lg-md">
-                <h3 class="mb-4">Lorem ipsum dolor sit amet consectutar domor at elis</h3>
-                <p class="lead lh-lg text-muted mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa nibh, pulvinar vitae aliquet nec, accumsan aliquet orci.</p>
-                <ul class="list-unstyled">
-                  <li class="d-flex align-items-center mb-6">
-                    <span class="d-inline-flex me-4 align-items-center justify-content-center bg-light rounded-circle" style="width: 48px; height: 48px;">
-                      <svg style="width: 24px; height: 24px;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 20H20" stroke="#006251" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M4 20V17L17 4L20 7L7 20H4Z" stroke="#006251" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M17 10L14 7" stroke="#006251" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg>
-                    </span>
-                    <h6 class="fw-normal mb-0">Change of access</h6>
-                  </li>
-                  <li class="d-flex align-items-center mb-6">
-                    <span class="d-inline-flex me-4 align-items-center justify-content-center bg-light rounded-circle" style="width: 48px; height: 48px;">
-                      <svg style="width: 24px; height: 24px;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#006251" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M8 11.5L11 14.5L17 8.5" stroke="#006251" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg>
-                    </span>
-                    <h6 class="fw-normal mb-0">Security in savings</h6>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <span class="d-inline-flex me-4 align-items-center justify-content-center bg-light rounded-circle" style="width: 48px; height: 48px;">
-                      <svg style="width: 24px; height: 24px;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 15C13.933 15 15.5 13.433 15.5 11.5C15.5 9.567 13.933 8 12 8C10.067 8 8.5 9.567 8.5 11.5C8.5 13.433 10.067 15 12 15Z" stroke="#006251" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M21 11.9999C21.003 14.3428 20.0892 16.594 18.454 18.2719C17.6162 19.1363 16.6131 19.8232 15.5043 20.2919C14.3955 20.7606 13.2038 21.0013 12 20.9999C10.7962 21.0013 9.6045 20.7606 8.49571 20.2919C7.38693 19.8232 6.38379 19.1363 5.546 18.2719C4.51822 17.2144 3.76604 15.9206 3.35561 14.5042C2.94518 13.0878 2.88908 11.5922 3.19223 10.1491C3.49539 8.7059 4.14852 7.35934 5.09418 6.22781C6.03984 5.09629 7.24906 4.21447 8.61547 3.65991C9.98189 3.10535 11.4636 2.89504 12.9304 3.04749C14.3972 3.19994 15.804 3.71046 17.0272 4.53417C18.2503 5.35787 19.2523 6.46952 19.9451 7.77133C20.6378 9.07314 21.0001 10.5252 21 11.9999V11.9999Z" stroke="#006251" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M5.5459 18.272C6.28829 17.2572 7.25974 16.432 8.38121 15.8634C9.50269 15.2948 10.7425 14.999 11.9999 15C13.2573 14.999 14.4971 15.2948 15.6186 15.8634C16.7401 16.432 17.7115 17.2572 18.4539 18.272" stroke="#006251" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg>
-                    </span>
-                    <h6 class="fw-normal mb-0">List of regular users</h6>
-                  </li>
-                </ul>
+                <h3 class="mb-4">About us</h3>
+                <p class="lead lh-lg text-muted mb-8">Foodistan is Pakistan's Largest Platform for Foodies. At Foodistan, we believe everyone should have unlimited access to good food at all times. We offer a platform whereby users can have access to the best restaurants in Pakistan. We reveal review information on these restaurants so that our users can make informed decisions in choosing the best restaurant services at all times.
+
+                  We feature the best of the best restaurants in Pakistan, these restaurants were carefully selected after consideration of a number of factors. These factors include hygiene, cuisine type, restaurant options available, popularity, and so on. We take data from restaurants time to time to ensure we remain updated. Reviews and photos from our subscribers should also guide you in making the best choices.
+                  
+                  With our services, restaurants are more focused on food itself. This, in turn, translates to memorable dining experiences for our users.
+                  
+                  No matter where you are, you can count on us when you’re researching for the best restaurant to dine in Pakistan.</p>
+                
               </div>
             </div>
-            <div class="d-none d-lg-block position-absolute top-0 end-0 bottom-0 w-50" style="background-image:url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80'); background-repeat: no-repeat; background-size: cover;">
-              <img class="position-absolute top-0 end-0" src="cronos-assets/elements/dark-green-dark-warning-right.svg" alt="">
+            <div class="d-none d-lg-block position-absolute my-40 top-0 end-0 bottom-0 w-50 h-30" style="background-image:url('cronos-assets/images/aboutus.png'); background-repeat: no-repeat; background-size: fit-content;" >
               <img class="position-absolute bottom-0 start-0" src="cronos-assets/elements/dark-green-dark-warning.svg" alt="">
             </div>
           </div>
@@ -80,22 +55,22 @@
             <div class="col-12 col-md-6 col-lg-3 mb-6 mb-lg-0">
               <div class="text-center">
                 <h1 class="mb-4 text-primary">5095</h1>
-                <p class="text-muted">Projects</p>
+                <p class="text-muted">Restaurants</p>
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3 mb-6 mb-lg-0">
               <div class="text-center">
                 <div class="text-center">
-                  <h1 class="mb-4 text-primary">1350</h1>
-                  <p class="text-muted">Clients</p>
+                  <h1 class="mb-4 text-primary">15+</h1>
+                  <p class="text-muted">Cities</p>
                 </div>
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3 mb-6 mb-md-0">
               <div class="text-center">
                 <div class="text-center">
-                  <h1 class="mb-4 text-primary">15+</h1>
-                  <p class="text-muted">Years of experience</p>
+                  <h1 class="mb-4 text-primary">30,000+</h1>
+                  <p class="text-muted">Users</p>
                 </div>
               </div>
             </div>

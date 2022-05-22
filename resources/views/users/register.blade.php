@@ -22,21 +22,52 @@
       <div class="row">
         <div class="col-12 col-lg-6">
           <div class="mw-lg-md text-center">
-            <form action="#">
+            <form method="POST" action="/users">
+             @csrf
               <a href="/">
                 <img src="cronos-assets/logos/food-2-logo-svg-vector.svg" alt="" width="132">
 
             </a>
               <h3 class="mt-6 mb-8">Create new account</h3>
-              <input class="form-control mb-6" type="email" placeholder="E-mail address">
-              <input class="form-control mb-6" type="password" placeholder="Password">
-              <input class="form-control mb-6" type="password" placeholder="Repeat password">
-              <label class="d-flex mb-5 text-start">
-                <input class="form-check-input me-4" type="checkbox" name="terms" value="1">
-                <small class="text-muted">By signing up, you agree to our <strong>Terms, Data Policy</strong> and <strong>Cookies Policy</strong>.</small>
-              </label>
+              <div class="mb-6">
+              <input class="form-control mb-6" type="text" placeholder="Your Name" name="name" value="{{old('name')}}">
+              @error('name')
+              <p class="text-danger">{{$message}}</p>
+              
+              @enderror
+            </div>
+            <div class="mb-6">
+              <input class="form-control mb-6" type="email" placeholder="Your Email" name="email" value="{{old('email')}}">
+              @error('email')
+              <p class="text-danger">{{$message}}</p>
+              @enderror
+            </div>
+            <div class="mb-6">
+              <input class="form-control mb-6" type="password" placeholder="Password" name="password" value="{{old('password')}}">
+              @error('password')
+              <p class="text-danger">{{$message}}</p>
+
+              @enderror
+            </div>
+            <div class="mb-6">
+              <input class="form-control mb-6" type="password" placeholder="Confirm Password" name="password_confirmation" value="{{old('password_confirmation')}}">
+              @error('password-confirmation')
+              <p class="text-danger">{{$message}}</p>
+
+              @enderror
+            </div>
+
+
+           
+              
               <button class="btn btn-primary w-10">Sign Up</button>
             </form>
+            <div class="mt-8">
+              <p>
+                Already have an account?
+                <a href="/login" class="text-laravel">Login</a>
+              </p>
+            </div>
     
           </div>
         </div>
