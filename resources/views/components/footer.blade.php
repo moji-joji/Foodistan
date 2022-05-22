@@ -11,7 +11,7 @@
             <div class="col-12 col-sm-6 col-lg-auto mb-8 mb-lg-0">
               <p class="text-white fw-bold mb-6">Product</p>
               <ul class="list-unstyled">
-                <li class="mb-3"><a class="small text-muted text-decoration-none" href="#">Search</a></li>
+                <li class="mb-3"><a class="small text-muted text-decoration-none" href="/listing">Search</a></li>
                 <li class="mb-3"><a class="small text-muted text-decoration-none" href="/blog">Blog</a></li>
                 <li class="mb-3"><a class="small text-muted text-decoration-none" href="/gallery">Gallery</a></li>
               </ul>

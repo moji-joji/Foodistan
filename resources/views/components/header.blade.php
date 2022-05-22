@@ -10,7 +10,7 @@
         </svg>
       </button>
       <ul class="d-none d-lg-flex position-absolute top-50 start-50 translate-middle navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#">Search</a></li>
+        <li class="nav-item"><a class="nav-link" href="/listing">Search</a></li>
 
         <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
         <li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>
@@ -45,7 +45,7 @@
         </a>
         <div>
           <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="#">Search</a></li>
+            <li class="nav-item"><a class="nav-link" href="listing">Search</a></li>
 
             <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>

@@ -28,6 +28,7 @@ return new class extends Migration
             $table->longText('text3');
             $table->string('tags');
             $table->string('comments');
+            $table->unsignedInteger('likes');
 
             $table->timestamps();
         });

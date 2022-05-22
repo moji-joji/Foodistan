@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ListingController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,3 +66,18 @@ Route::get('/login', [UserController::class, 'login'])->name("login")->middlewar
 
 // authenticate user
 Route::post('/login/authenticate', [UserController::class, 'authenticate']);
+
+
+
+// listing resteraunt
+Route::get('/listing', [ListingController::class, 'index']);
+
+
+
+
+
+
+// blog 
+Route::get('/blog', [BlogController::class, 'index']);
+
+Route::get('/blog-post1', [BlogController::class, 'blogpost1']);
