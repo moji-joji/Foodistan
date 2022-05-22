@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
+});
+
+Route::get('/signup-page', function () {
+    return view('signup-page');
+});
+
+Route::get('/signin-page', function () {
+    return view('signin-page');
+});
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
 });

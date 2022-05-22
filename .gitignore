@@ -5,8 +5,12 @@
 /vendor
 /.idea
 /.vagrant
+/devtest
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
 .env
+.svg
+.jpg
+.png
