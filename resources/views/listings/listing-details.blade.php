@@ -20,10 +20,32 @@
     @component('components.header')
     @endcomponent
 
-
+    <div class="container">
+        <div class="mw-3xl mt-5 mb-5 mx-auto text-center">
+            <div class="d-flex justify-content-center align-items-center ">
+                <a class="text-muted text-decoration-none fw-bold" style="font-size: 12px;" href="/">Home</a>
+                <svg class="mx-2" width="4" height="8" viewBox="0 0 4 8" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.12038 7.17461C-0.0593306 7.38428 -0.0350499 7.69993 0.174613 7.87964C0.384276 8.05935 0.699926 8.03507 0.879637 7.8254L3.87964 4.3254C4.04013 4.13816 4.04013 3.86186 3.87964 3.67461L0.879637 0.174613C0.699926 -0.0350495 0.384276 -0.0593303 0.174613 0.120381C-0.0350496 0.300092 -0.0593303 0.615742 0.120381 0.825405L2.84147 4.00001L0.12038 7.17461Z"
+                        fill="#A8A29E"></path>
+                </svg>
+                <a class="text-muted text-decoration-none fw-bold" style="font-size: 12px;" href="/listing">Search
+                </a> <svg class="mx-2" width="4" height="8" viewBox="0 0 4 8" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.12038 7.17461C-0.0593306 7.38428 -0.0350499 7.69993 0.174613 7.87964C0.384276 8.05935 0.699926 8.03507 0.879637 7.8254L3.87964 4.3254C4.04013 4.13816 4.04013 3.86186 3.87964 3.67461L0.879637 0.174613C0.699926 -0.0350495 0.384276 -0.0593303 0.174613 0.120381C-0.0350496 0.300092 -0.0593303 0.615742 0.120381 0.825405L2.84147 4.00001L0.12038 7.17461Z"
+                        fill="#A8A29E"></path>
+                </svg>
+                <a class="text-muted text-decoration-none fw-bold" style="font-size: 12px;" href="#">Restaurant
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="position-relative">
-        <img class="w-100 img-fluid" style="height: 448px; object-fit: cover;" src="/cronos-assets/images/{{$listing->main_image}}" alt="">
-         
+        <img class="w-100 img-fluid" style="height: 448px; object-fit: cover;"
+            src="/cronos-assets/images/{{ $listing->main_image }}" alt="">
+
     </div>
 
 
@@ -146,8 +168,29 @@
                                 like the ones you get from the local market.</p>
 
                         </div>
-                    </div>
 
+
+
+
+
+                    </div>
+                    @auth
+
+                        <div class="mb-6">
+                            <label class="form-label" for="">Write your review</label>
+                            <textarea class="form-control" name="field-name" rows="3" placeholder="Write something..."></textarea>
+
+                        </div>
+                        <label class="form-label" for="">Rating</label>
+                        <input type="number" min="0" max="5" width="100px">
+                        <div></div>
+                        <input class="btn btn-primary my-5 review-btn" type="button" value="Post review">
+
+
+                    @endauth
+                    @guest
+                        <p class="muted text-warning ">You must be logged in to post a review</p>
+                    @endguest
                 </div>
 
 
@@ -186,6 +229,7 @@
     </div>
     <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
+
 </body>
 
 </html>

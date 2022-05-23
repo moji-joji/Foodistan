@@ -2,7 +2,7 @@
     <div class="p-4 bg-white rounded shadow">
         <div class="position-relative mb-4">
             <img class="img-fluid w-100 rounded" style="height: 155px; object-fit: cover;"
-                src="/cronos-assets/images/mcdonalds.jpg" alt="">
+                src="/cronos-assets/images/{{ $listing->main_image }}" alt="">
             <span class="position-absolute top-0 end-0 mt-2 me-2 bg-primary py-1 px-2 text-white rounded small">
                 <img src="/cronos-assets/logos/golden-star-icon.png" width="15px" alt="" srcset="">
                 <img src="/cronos-assets/logos/golden-star-icon.png" width="15px" alt="" srcset="">
@@ -19,7 +19,7 @@
 
                     <h3 class="small mb-1">{{ $listing->title }} </h3>
                     <a href="#">
-                        <span class="text-muted small">$listing->location</span>
+                        <span class="text-muted small">{{ $listing->address }}</span>
                     </a>
                 </div>
 
@@ -59,7 +59,7 @@
             </div>
 
             <div class="mb-1 align-items-center justify-content-between">
-                <a href="#">
+                <a href="" class="heart">
 
                     <img src="/cronos-assets/images/heart-black.svg" width="25px" alt="">
                 </a>

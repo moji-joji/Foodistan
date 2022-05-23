@@ -56,27 +56,8 @@
         </section>
 
 
+        <h3>No search results</h3>
 
-        <section class="py-8">
-            <div class="container">
-                <div class="row">
-                    @component('components.listing-card')
-                    @endcomponent
-                    @component('components.listing-card')
-                    @endcomponent
-                    @component('components.listing-card')
-                    @endcomponent
-                    @component('components.listing-card')
-                    @endcomponent
-                    @component('components.listing-card')
-                    @endcomponent
-                    @component('components.listing-card')
-                    @endcomponent
-
-                </div>
-
-
-            </div>
         </section>
 
 

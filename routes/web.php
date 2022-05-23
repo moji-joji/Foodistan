@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\BlogController;
+use Clockwork\Request\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,15 +75,14 @@ Route::get('/blog', [BlogController::class, 'index']);
 Route::get('/blog-post1', [BlogController::class, 'blogpost1']);
 
 
+Route::get(
+    '/listing/search',
+    [ListingController::class, 'search']
+);
 
 // listing resteraunt
 Route::get('/listing', [ListingController::class, 'index']);
 
 Route::get('/listing/{id}', [ListingController::class, 'show']);
 
-
-
-
-
-
-// listing restaurant
+// Route::get('/listing/{matching}', [ListingController::class, 'matching']);

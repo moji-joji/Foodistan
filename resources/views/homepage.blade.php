@@ -140,6 +140,8 @@
                     </div>
                     <div>
                         <ul class="nav flex-column">
+                            <li class="nav-item"><a class="nav-link" href="listing">Search</a></li>
+
                             <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
                             <li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>
                             <li class="nav-item"><a class="nav-link" href="/faq">Faq</a></li>
@@ -181,7 +183,7 @@
                         <h2 class="mt-6 mb-4 text-white">Don't know where to eat? </h2>
                         <p class="mw-xl mx-auto lead text-light mb-6">Tell us your preferences and let us take care of
                             the rest</p>
-                        <a class="btn btn-secondary" href="#">Try Now</a>
+                        <a class="btn btn-secondary" href="/listing">Try Now</a>
                     </div>
 
 
