@@ -41,13 +41,19 @@
 
         </section>
 
-
+        <h3 class="text-center mt-10">Featured Restaurants</h3>
 
         <section class="py-8">
             <div class="container">
                 <div class="row">
-                    @component('components.listing-card', ['listing' => 'listing-1', 'image' => 'cronos-assets/images/listing-1.jpg'])
-                    @endcomponent
+                    @if ($listings->count() > 0)
+
+
+                        @foreach ($listings as $listing)
+                        @endforeach
+                        @component('components.listing-card', ['listing' => $listing])
+                        @endcomponent
+                    @endif
 
 
 

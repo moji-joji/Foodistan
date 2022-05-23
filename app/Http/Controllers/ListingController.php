@@ -12,14 +12,18 @@ class ListingController extends Controller
 
     public function index()
     {
+        // get featured listings
 
-        return view('listings.featured');
+        $listings = Listing::where('featured', '=', 'yes')->get();
+        return view('listings.featured', compact('listings'));
     }
 
     public function show($id)
     {
+        // get listing by id
+        $listing = Listing::find($id);
 
-        return view('listings.listing-details');
+        return view('listings.listing-details', compact('listing'));
     }
 
 

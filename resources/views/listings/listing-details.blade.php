@@ -22,8 +22,8 @@
 
 
     <div class="position-relative">
-        <img class="w-100 img-fluid" style="height: 448px; object-fit: cover;" src="/cronos-assets/images/mcdonalds.jpg"
-            alt="">
+        <img class="w-100 img-fluid" style="height: 448px; object-fit: cover;" src="/cronos-assets/images/{{$listing->main_image}}" alt="">
+         
     </div>
 
 
@@ -32,15 +32,12 @@
         <div class="row ">
             <div class="col-12 col-lg-6 mb-8 mb-lg-0">
                 <div class="mw-lg-md ">
-                    <h3 class="my-3 py-12">Mc Donalds <span class="text-primary border-left-20">4/5</span>
+                    <h3 class="my-3 py-12">{{ $listing->title }} <span
+                            class="text-primary border-left-20">{{ $listing->avg_rating }}/5</span>
                     </h3>
                     <span class="d-inline-block px-2 bg-secondary-light text-danger rounded-pill small my-2">
                         Category</span>
-                    <p class="lead lh-lg text-muted mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Pellentesque massa nibh, pulvinar vitae aliquet nec, accumsan aliquet orci. Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit. Illo optio dolores laboriosam ad rerum et aspernatur
-                        facilis omnis ea cupiditate, fuga similique repellendus placeat sequi voluptate perferendis
-                        vitae quod tempora.</p>
+                    <p class="lead lh-lg text-muted mb-6">{{ $listing->description }}</p>
 
                 </div>
 
@@ -48,9 +45,9 @@
 
                     <img src="/cronos-assets/images/eye.svg" width="30px" alt="">
 
-                    20
+                    {{ $listing->views }}
                     <span class="mx-3"></span>
-                    <img src="/cronos-assets/images/heart-black.svg" width="30px" alt=""> 10
+                    <img src="/cronos-assets/images/heart-black.svg" width="30px" alt=""> {{ $listing->likes }}
                 </div>
             </div>
             <div class="col-12 col-lg-6 mt-12">
@@ -59,29 +56,32 @@
 
                     <a href="" class="text-decoration-none">
 
-                        <div class="text-muted"><strong> Address:</strong> Safa Gold Mall Islamabad</div>
+                        <div class="text-muted"><strong> Address:</strong> {{ $listing->address }}</div>
                     </a>
 
                     <a href="" class="text-decoration-none">
 
-                        <div class="text-muted"><strong>Phone Number:</strong> +92-333-7483741</div>
+                        <div class="text-muted"><strong>Phone Number:</strong> {{ $listing->phone_number }}</div>
                     </a>
                     <a href="" class="text-decoration-none">
 
-                        <div class="text-muted"><strong>Website:</strong> mcdonalds.com.pk</div>
+                        <div class="text-muted"><strong>Website:</strong>{{ $listing->website }}</div>
                     </a>
                     <a href="" class="text-decoration-none">
 
-                        <div class="text-muted"><strong>Email:</strong> hello@mcdonalds.com</div>
+                        <div class="text-muted"><strong>Email:</strong> {{ $listing->email }}</div>
                     </a>
                     <a href="" class="text-decoration-none">
 
                         <div class="d-flex justify-content-center my-10">
                     </a>
 
-                    <a href="" class="mx-5"><img src="/cronos-assets/logos/brands/facebook.svg" alt=""></a>
-                    <a href="" class="mx-5"><img src="/cronos-assets/logos/brands/instagram.svg" alt=""></a>
-                    <a href="" class="mx-5"><img src="/cronos-assets/logos/brands/twitter.svg" alt=""></a>
+                    <a href="{{ $listing->facebook_url }}" class="mx-5"><img
+                            src="/cronos-assets/logos/brands/facebook.svg" alt=""></a>
+                    <a href="{{ $listing->instagram_url }}" class="mx-5"><img
+                            src="/cronos-assets/logos/brands/instagram.svg" alt=""></a>
+                    <a href="{{ $listing->twitter_url }}" class="mx-5"><img
+                            src="/cronos-assets/logos/brands/twitter.svg" alt=""></a>
                 </div>
 
             </div>
@@ -105,7 +105,7 @@
             </div>
             <div class="position-relative">
                 <iframe style="height:448px;width:100%;border:0;" frameborder="0"
-                    src="https://www.google.com/maps/embed/v1/place?q=restaurant&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                    src="{{ $listing->location_slug }}"></iframe>
 
 
             </div>
@@ -141,9 +141,9 @@
                             </button>
                         </div>
                         <div class="mb-5">
-                            <p class="mb-8 small">She has worked with major companies for years. She has won
-                                numerous awards. She runs her website and is willing to support the marketing activities
-                                of any company.</p>
+                            <p class="mb-8 small">Great place to have fun with your family. Food is also good, my
+                                kids love it. They are smooth and look almost baked to perfection but Pakistan's look
+                                like the ones you get from the local market.</p>
 
                         </div>
                     </div>
@@ -168,13 +168,13 @@
                     Restaurant
                 </span>
                 <span class="d-inline-block px-2 bg-primary-light text-primary rounded-pill small  my-2">
-                    Restaurant
+                    Fast food
                 </span> <span class="d-inline-block px-2 bg-primary-light text-primary rounded-pill small  my-2">
-                    Restaurant
+                    Kids
                 </span> <span class="d-inline-block px-2 bg-primary-light text-primary rounded-pill small  my-2">
-                    Restaurant
+                    Burgers
                 </span> <span class="d-inline-block px-2 bg-primary-light text-primary rounded-pill small  my-2">
-                    Restaurant
+                    Pizza
                 </span>
         </div>
     </div>

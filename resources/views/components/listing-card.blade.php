@@ -17,37 +17,44 @@
             <div class="d-flex align-items-center justify-content-between mb-6">
                 <div>
 
-                    <h3 class="small mb-1">McDonald's </h3>
+                    <h3 class="small mb-1">{{ $listing->title }} </h3>
                     <a href="#">
-                        <span class="text-muted small">Safa Gold Mall - Islamabad</span>
+                        <span class="text-muted small">$listing->location</span>
                     </a>
                 </div>
 
             </div>
             <div class="d-flex mb-1 align-items-center justify-content-between">
                 <h4 class="mb-0 small">Price</h4>
-                <span class="d-inline-block px-2 bg-success-light text-success rounded-pill small">~999
+                <span
+                    class="d-inline-block px-2 bg-success-light text-success rounded-pill small">~{{ $listing->price_approx }}
                     PKR</span>
             </div>
             <div class="d-flex mb-1 align-items-center justify-content-between">
                 <h4 class="mb-0 small">Phone</h4>
                 <span class="d-inline-block px-2 bg-danger-light text-danger rounded-pill small">
-                    +92 21 111 532 532</span>
+                    {{ $listing->phone_number }}</span>
             </div>
             <div class="d-flex mb-1 align-items-center justify-content-between">
                 <h4 class="mb-0 small">Open Hours</h4>
                 <span class="d-inline-block px-2 bg-secondary-light text-danger rounded-pill small">
-                    10 AM - 10 PM</span>
+                    {{ $listing->open_hours }}</span>
             </div>
             <div class="d-flex mb-1 align-items-center justify-content-between">
                 <h4 class="mb-0 small">Category</h4>
                 <span class="d-inline-block px-2 bg-primary-light text-danger rounded-pill small">
-                    Restaurant</span>
+                    {{ $listing->category }}</span>
             </div>
             <div class="mb-1 align-items-center justify-content-between">
                 <h4 class="mb-0 small my-5 margin-bottom-10 ">Tags</h4>
                 <span class="d-inline-block px-2 bg-primary-light text-primary rounded-pill small  my-2">
                     Restaurant
+                </span>
+                <span class="d-inline-block px-2 bg-primary-light text-primary rounded-pill small  my-2">
+                    Fast food
+                </span>
+                <span class="d-inline-block px-2 bg-primary-light text-primary rounded-pill small  my-2">
+                    Kids
                 </span>
             </div>
 
@@ -56,7 +63,7 @@
 
                     <img src="/cronos-assets/images/heart-black.svg" width="25px" alt="">
                 </a>
-                <span class="mx-2">23</span>
+                <span class="mx-2">{{ $listing->no_of_likes }}</span>
             </div>
 
 
@@ -64,7 +71,7 @@
 
             <div class="pt-4 border-top border-light">
                 <div class="d-flex w-100 justify-content-between">
-                    <a class="ms-auto btn btn-sm btn-primary" href="/listing/2">See Details</a>
+                    <a class="ms-auto btn btn-sm btn-primary" href="/listing/{{ $listing->id }}">See Details</a>
                 </div>
             </div>
         </div>

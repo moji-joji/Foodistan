@@ -1,5 +1,9 @@
 <section class="py-20 bg-dark">
     <div class="container">
+        <a href="#" class="text-decoration-none">
+
+            <div class="text-secondary text-center mb-10">Back to the top</div>
+        </a>
         <div class="row border-bottom">
             <div class="col-12 col-lg-3 mb-10 mb-lg-0">
                 <a class="navbar-brand text-white" href="#">
@@ -7,10 +11,14 @@
                 </a>
             </div>
             <div class="col-12 col-lg-9 mb-12">
+
+
                 <div class="row justify-content-between">
                     <div class="col-12 col-sm-6 col-lg-auto mb-8 mb-lg-0">
                         <p class="text-white fw-bold mb-6">Product</p>
                         <ul class="list-unstyled">
+                            <li class="mb-3"><a class="small text-muted text-decoration-none"
+                                    href="/">Home</a>
                             <li class="mb-3"><a class="small text-muted text-decoration-none"
                                     href="/listing">Search</a></li>
                             <li class="mb-3"><a class="small text-muted text-decoration-none"
