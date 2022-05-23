@@ -16,6 +16,7 @@
 </head>
 
 <body>
+
     @auth
         <div class="bg-primary text-light login-msg">You are logged in</div>
         {{-- {{-- @else --}}

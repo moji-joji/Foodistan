@@ -2,13 +2,13 @@
     <div class="p-4 bg-white rounded shadow">
         <div class="position-relative mb-4">
             <img class="img-fluid w-100 rounded" style="height: 155px; object-fit: cover;"
-                src="cronos-assets/images/mcdonalds.jpg" alt="">
+                src="/cronos-assets/images/mcdonalds.jpg" alt="">
             <span class="position-absolute top-0 end-0 mt-2 me-2 bg-primary py-1 px-2 text-white rounded small">
-                <img src="cronos-assets/logos/golden-star-icon.png" width="15px" alt="" srcset="">
-                <img src="cronos-assets/logos/golden-star-icon.png" width="15px" alt="" srcset="">
-                <img src="cronos-assets/logos/golden-star-icon.png" width="15px" alt="" srcset="">
-                <img src="cronos-assets/logos/golden-star-icon.png" width="15px" alt="" srcset="">
-                <img src="cronos-assets/logos/golden-star-icon.png" width="15px" alt="" srcset="">
+                <img src="/cronos-assets/logos/golden-star-icon.png" width="15px" alt="" srcset="">
+                <img src="/cronos-assets/logos/golden-star-icon.png" width="15px" alt="" srcset="">
+                <img src="/cronos-assets/logos/golden-star-icon.png" width="15px" alt="" srcset="">
+                <img src="/cronos-assets/logos/golden-star-icon.png" width="15px" alt="" srcset="">
+                <img src="/cronos-assets/logos/golden-star-icon.png" width="15px" alt="" srcset="">
 
 
             </span>
@@ -17,7 +17,7 @@
             <div class="d-flex align-items-center justify-content-between mb-6">
                 <div>
 
-                    <h3 class="small mb-1">McDonald's</h3>
+                    <h3 class="small mb-1">McDonald's </h3>
                     <a href="#">
                         <span class="text-muted small">Safa Gold Mall - Islamabad</span>
                     </a>
@@ -34,15 +34,38 @@
                 <span class="d-inline-block px-2 bg-danger-light text-danger rounded-pill small">
                     +92 21 111 532 532</span>
             </div>
-            <div class="d-flex align-items-center justify-content-between">
-                <h4 class="mb-0 small">Category</h4>
-                <span class="d-inline-block text-info small">Fast food</span>
+            <div class="d-flex mb-1 align-items-center justify-content-between">
+                <h4 class="mb-0 small">Open Hours</h4>
+                <span class="d-inline-block px-2 bg-secondary-light text-danger rounded-pill small">
+                    10 AM - 10 PM</span>
             </div>
-        </div>
-        <div class="pt-4 border-top border-light">
-            <div class="d-flex w-100 justify-content-between">
-                <a class="ms-auto btn btn-sm btn-primary" href="#">See Details</a>
+            <div class="d-flex mb-1 align-items-center justify-content-between">
+                <h4 class="mb-0 small">Category</h4>
+                <span class="d-inline-block px-2 bg-primary-light text-danger rounded-pill small">
+                    Restaurant</span>
+            </div>
+            <div class="mb-1 align-items-center justify-content-between">
+                <h4 class="mb-0 small my-5 margin-bottom-10 ">Tags</h4>
+                <span class="d-inline-block px-2 bg-primary-light text-primary rounded-pill small  my-2">
+                    Restaurant
+                </span>
+            </div>
+
+            <div class="mb-1 align-items-center justify-content-between">
+                <a href="#">
+
+                    <img src="/cronos-assets/images/heart-black.svg" width="25px" alt="">
+                </a>
+                <span class="mx-2">23</span>
+            </div>
+
+
+
+
+            <div class="pt-4 border-top border-light">
+                <div class="d-flex w-100 justify-content-between">
+                    <a class="ms-auto btn btn-sm btn-primary" href="/listing/2">See Details</a>
+                </div>
             </div>
         </div>
     </div>
-</div>

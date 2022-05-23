@@ -68,16 +68,21 @@ Route::get('/login', [UserController::class, 'login'])->name("login")->middlewar
 Route::post('/login/authenticate', [UserController::class, 'authenticate']);
 
 
-
-// listing resteraunt
-Route::get('/listing', [ListingController::class, 'index']);
-
-
-
-
-
-
 // blog 
 Route::get('/blog', [BlogController::class, 'index']);
 
 Route::get('/blog-post1', [BlogController::class, 'blogpost1']);
+
+
+
+// listing resteraunt
+Route::get('/listing', [ListingController::class, 'index']);
+
+Route::get('/listing/{id}', [ListingController::class, 'show']);
+
+
+
+
+
+
+// listing restaurant
