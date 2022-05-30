@@ -43,29 +43,25 @@
             <div class="container">
                 <div class="mw-5xl text-center mx-auto mb-16">
 
-                    <h2 class="mt-6 mb-4">Recent blogposts</h2>
+                    <h2 class="mt-6 mb-4">Recent blogposts </h2>
                     <p class="mw-xl mx-auto lead lh-lg text-muted">Discover interesting articles to read
                 </div>
                 <div class="row mb-5">
-                    <div class="col-12 col-md-6 mb-8">
-                        <div class="bg-light p-6">
-                            <div class="mb-4">
-                                <img class="img-fluid w-100" style="height: 277px;"
-                                    src="cronos-assets/images/icecream-blog.jpeg" alt="">
 
-                            </div>
-                            <span class="text-muted" style="font-size: 12px;">10 jun 2021 19:40</span>
-                            <h3 class="my-4">Can Ice Cream Help You Lose Weight?</h3>
-                            <p class="lead lh-lg text-muted mb-6">Ice creams are one of the most loved and consumed
-                                sweets in the world. Whether it’s after delicious main courses or a random midnight
-                                snack, ice creams serve best for all. They have this unique satisfying and fulfilling
-                                attribute that compares to none....</p>
-                            <a class="link-primary fw-bold text-decoration-none" href="/blog-post1">Read More</a>
-                        </div>
-                    </div>
+                    @foreach ($blogs as $blog)
+                        @component('components.blog-card', ['blog' => $blog])
+                        @endcomponent
+                    @endforeach
 
                 </div>
+                <a href="/writeblog">
+                    <h3>Write blog</h3>
+                </a>
+
             </div>
+
+
+
         </section>
 
 

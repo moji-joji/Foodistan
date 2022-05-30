@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ListingController;
-use App\Http\Controllers\BlogController;
 use Clockwork\Request\Request;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,8 @@ use Clockwork\Request\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 
 Route::get('/', function () {
     return view('homepage');
@@ -70,10 +73,20 @@ Route::post('/login/authenticate', [UserController::class, 'authenticate']);
 
 
 // blog 
+Route::post('/blog/{id}/delete', [BlogController::class, 'destroy']);
+Route::get('/blog/{id}/edit', [BlogController::class, 'edit']);
+Route::post('/blog/{id}/edit', [BlogController::class, 'makeEdit']);
+
+
 Route::get('/blog', [BlogController::class, 'index']);
 
-Route::get('/blog-post1', [BlogController::class, 'blogpost1']);
+Route::get('/blog/{id}', [BlogController::class, 'show']);
 
+Route::post('blog', [BlogController::class, 'store']);
+
+
+
+Route::get('/writeblog', [BlogController::class, 'writeblog'])->middleware("auth");
 
 Route::get(
     '/listing/search',
@@ -81,8 +94,12 @@ Route::get(
 );
 
 // listing resteraunt
+Route::post('/listing/{id}/review', [ReviewController::class, 'store']);
+
+
 Route::get('/listing', [ListingController::class, 'index']);
 
 Route::get('/listing/{id}', [ListingController::class, 'show']);
 
-// Route::get('/listing/{matching}', [ListingController::class, 'matching']);
+
+// review post

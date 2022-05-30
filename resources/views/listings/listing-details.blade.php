@@ -155,16 +155,18 @@
                                 You have already reviewed this listing.
                             </div>
                         @else
-                            <form action="/review.php">
+                            <form method="POST" action="/listing/{{ $listing->id }}/review">
+                                @csrf
                                 <div class="mb-6">
                                     <label class="form-label" for="">Write your review</label>
-                                    <textarea class="form-control" name="field-name" rows="3" placeholder="Write something..." required></textarea>
+                                    <textarea class="form-control" name="content" rows="3" placeholder="Write something..." required></textarea>
 
                                 </div>
                                 <label class="form-label" for="">Rating</label>
-                                <input type="number" min="0" max="5" width="100px" required>
+                                <input type="number" min="0" max="5" width="100px" name="rating" required>
                                 <div></div>
-                                <button class="btn btn-primary my-5 review-btn" type="submit" value="Post review"></button>
+                                <button class="btn btn-primary my-5 review-btn" type="submit" value="Post review">Post
+                                    review</button>
                             </form>
                         @endif
                     @endauth

@@ -26,7 +26,6 @@ class ListingController extends Controller
         if ($listing == null) {
             abort(404);
         }
-
         // $reviews = Listing::find($id)->reviews()->get();
         $reviews = DB::table('reviews')->join('users', 'reviews.user_id', '=', 'users.id')->where('listing_id', '=', $id)->get();
         $reviews = json_decode($reviews, true);

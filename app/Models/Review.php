@@ -9,6 +9,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Review extends Model
 {
 
+
+    protected $fillable = [
+        'rating',
+        'content',
+        'user_id',
+        'listing_id',
+    ];
+
     public function listing()
     {
         // by default foreign key is listing_id
