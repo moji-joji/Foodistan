@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Listing;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ListingController extends Controller
 {
@@ -26,7 +27,11 @@ class ListingController extends Controller
             abort(404);
         }
 
-        return view('listings.listing-details', compact('listing'));
+        // $reviews = Listing::find($id)->reviews()->get();
+        $reviews = DB::table('reviews')->join('users', 'reviews.user_id', '=', 'users.id')->where('listing_id', '=', $id)->get();
+        $reviews = json_decode($reviews, true);
+
+        return view('listings.listing-details', ['listing' => $listing, 'reviews' => $reviews]);
     }
 
 
@@ -36,7 +41,7 @@ class ListingController extends Controller
         // get matching listings
 
         $listings = Listing::where('description', 'like', '%' . strtolower($request->q) . '%')->get();
-      
+
 
         return view('listings.featured', compact('listings'));
     }
