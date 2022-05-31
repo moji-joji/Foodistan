@@ -72,6 +72,8 @@ Route::get('/login', [UserController::class, 'login'])->name("login")->middlewar
 Route::post('/login/authenticate', [UserController::class, 'authenticate']);
 
 
+Route::get('profile', [UserController::class, 'profile'])->middleware("auth");
+
 // blog 
 Route::post('/blog/{id}/delete', [BlogController::class, 'destroy']);
 Route::get('/blog/{id}/edit', [BlogController::class, 'edit']);
@@ -95,6 +97,7 @@ Route::get(
 
 // listing resteraunt
 Route::post('/listing/{id}/review', [ReviewController::class, 'store']);
+Route::post('/listing/{id}/review/{userId}/delete', [ReviewController::class, 'destroy']);
 
 
 Route::get('/listing', [ListingController::class, 'index']);

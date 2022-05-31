@@ -23,11 +23,11 @@ class Listing extends Model
         'no_of_likes' => 0,
         'longitude' => 0,
         'latitude' => 0,
-    
-       
-      
-       
-       
+
+
+
+
+
 
 
     ];
@@ -37,4 +37,9 @@ class Listing extends Model
         return $this->hasMany(Review::class);
     }
 
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 }

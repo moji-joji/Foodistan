@@ -21,12 +21,21 @@
             <li class="nav-item"><a class="nav-link" href="faq">Faq</a></li>
             <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
             <li class="nav-item"><a class="nav-link" href="/aboutus">About</a></li>
+
         </ul>
+
+
         @auth
             <div class="d-none d-lg-block">
 
                 <form class="inline" method="POST" action="/logout">
                     @csrf
+                    <a href="/profile" class="text-decoration-none ml-3">
+                        <img src="/cronos-assets/images/avatar.png" alt="" width="32" class="rounded-circle">
+                        <span class="ml-4 bold ">{{ Auth::user()->name }}</span>
+                    </a>
+                    {{-- user name --}}
+
                     <button type="submit" class="btn btn-warning">
                         Logout
                     </button>
@@ -59,12 +68,22 @@
                     <li class="nav-item"><a class="nav-link" href="faq">Faq</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="/aboutus">About</a></li>
+                    @auth
+                        <li class="nav-item">
+                            <a href="/profile" class="text-decoration-none ml-3 my-3">
+                                <img src="/cronos-assets/images/avatar.png" alt="" width="32" class="rounded-circle">
+                                <span class="ml-4 bold ">{{ Auth::user()->name }}</span>
+                            </a>
+                        </li>
+                    @endauth
+
                 </ul>
             </div>
             <div class="mt-auto">
                 @auth
                     <form class="inline" method="POST" action="/logout">
                         @csrf
+
                         <button type="submit" class="btn btn-warning w-100">
                             Logout
                         </button>

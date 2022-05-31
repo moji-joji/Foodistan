@@ -16,11 +16,17 @@ class ListingController extends Controller
         // get featured listings
 
         $listings = Listing::where('featured', '=', 'yes')->get();
-        return view('listings.featured', compact('listings'));
+        // get likes
+        $likes = DB::table('likes')->get();
+
+        return view('listings.featured', compact('listings'), compact('likes'));
     }
+
+
 
     public function show($id)
     {
+
         // get listing by id
         $listing = Listing::find($id);
         if ($listing == null) {

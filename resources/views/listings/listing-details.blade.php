@@ -68,8 +68,24 @@
                     <img src="/cronos-assets/images/eye.svg" width="30px" alt="">
 
                     {{ $listing->views }}
+
                     <span class="mx-3"></span>
-                    <img src="/cronos-assets/images/heart-black.svg" width="30px" alt=""> {{ $listing->likes }}
+                    <a href="" class="text-decoration-none">
+
+                        @if (Auth::check())
+
+                            @if (Auth::user()->likes->contains($listing->id))
+                                <img src="/cronos-assets/images/heart-red.svg" width="25px" alt="">
+                                {{ $listing->likes->count() }}
+                            @else
+                                <img src="/cronos-assets/images/heart-black.svg" width="25px" alt="">
+                            @endif
+                        @else
+                            <img src="/cronos-assets/images/heart-black.svg" width="25px" alt="">
+                        @endif
+                    </a>
+
+
                 </div>
             </div>
             <div class="col-12 col-lg-6 mt-12">

@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="/https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
 
 
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="/favicon.ico">
 </head>
 
 <body>
@@ -69,9 +69,9 @@
                         </div>
                     </div>
                     <div class="d-none d-lg-block position-absolute my-40 top-0 end-0 bottom-0 w-50 h-30"
-                        style="background-image:url('cronos-assets/images/aboutus.png'); background-repeat: no-repeat; background-size: fit-content;">
+                        style="background-image:url('/cronos-assets/images/aboutus.png'); background-repeat: no-repeat; background-size: fit-content;">
                         <img class="position-absolute bottom-0 start-0"
-                            src="cronos-assets/elements/dark-green-dark-warning.svg" alt="">
+                            src="/cronos-assets/elements/dark-green-dark-warning.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -210,45 +210,45 @@
             <div class="container">
                 <div class="px-24 pt-14 pb-8 bg-light-light position-relative">
                     <img class="d-none d-md-block position-absolute top-0 start-0 translate-middle"
-                        src="cronos-assets/elements/left-squares.svg" alt="">
+                        src="/cronos-assets/elements/left-squares.svg" alt="">
                     <img class="d-none d-md-block position-absolute top-100 start-100 translate-middle"
-                        src="cronos-assets/elements/right-squares.svg" alt="">
+                        src="/cronos-assets/elements/right-squares.svg" alt="">
                     <h6 class="mb-4 fw-normal text-center">Trusted by brands all over the world</h6>
                     <div class="row align-items-center">
                         <div class="col-12 col-md-4 col-lg-2">
                             <div class="py-8 py-lg-14">
-                                <img class="img-fluid d-block mx-auto" src="cronos-assets/logos/brands/slack-color.svg"
+                                <img class="img-fluid d-block mx-auto" src="/cronos-assets/logos/brands/slack-color.svg"
                                     alt="">
                             </div>
                         </div>
                         <div class="col-12 col-md-4 col-lg-2">
                             <div class="py-8 py-lg-14">
                                 <img class="img-fluid d-block mx-auto"
-                                    src="cronos-assets/logos/brands/dropbox-color.svg" alt="">
+                                    src="/cronos-assets/logos/brands/dropbox-color.svg" alt="">
                             </div>
                         </div>
                         <div class="col-12 col-md-4 col-lg-2">
                             <div class="py-8 py-lg-14">
                                 <img class="img-fluid d-block mx-auto"
-                                    src="cronos-assets/logos/brands/spotify-color.svg" alt="">
+                                    src="/cronos-assets/logos/brands/spotify-color.svg" alt="">
                             </div>
                         </div>
                         <div class="col-12 col-md-4 col-lg-2">
                             <div class="py-8 py-lg-14">
                                 <img class="img-fluid d-block mx-auto"
-                                    src="cronos-assets/logos/brands/amazon-color.svg" alt="">
+                                    src="/cronos-assets/logos/brands/amazon-color.svg" alt="">
                             </div>
                         </div>
                         <div class="col-12 col-md-4 col-lg-2">
                             <div class="py-8 py-lg-14">
                                 <img class="img-fluid d-block mx-auto"
-                                    src="cronos-assets/logos/brands/netflix-color.svg" alt="">
+                                    src="/cronos-assets/logos/brands/netflix-color.svg" alt="">
                             </div>
                         </div>
                         <div class="col-12 col-md-4 col-lg-2">
                             <div class="py-8 py-lg-14">
                                 <img class="img-fluid d-block mx-auto"
-                                    src="cronos-assets/logos/brands/stripe-color.svg" alt="">
+                                    src="/cronos-assets/logos/brands/stripe-color.svg" alt="">
                             </div>
                         </div>
                     </div>
@@ -261,8 +261,8 @@
         @endcomponent
 
     </div>
-    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

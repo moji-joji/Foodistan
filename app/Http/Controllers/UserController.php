@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\Like;
 use App\Models\User;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -47,7 +51,7 @@ class UserController extends Controller
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        
+
 
         return redirect('/');
     }
@@ -74,5 +78,37 @@ class UserController extends Controller
         }
 
         return redirect('/login')->with('message', 'Invalid credentials');
+    }
+
+    public function profile()
+    {
+        // get liked listings
+        // $likedListings = Like::where('user_id', '=', auth()->id())->get();
+
+        // $reviews = DB::table('reviews')->join('users', 'reviews.user_id', '=', 'users.id')->where('listing_id', '=', $id)->get();
+
+        $likedListings = DB::table('likes')->join('listings', 'likes.listing_id', '=', 'listings.id')->where('user_id', '=', auth()->id())->get();
+
+
+
+        // get blogs
+        $blogs = Blog::where('user_id', '=', auth()->id())->get();
+
+        // get reviews
+        // $reviewedListings = Review::where('user_id', '=', auth()->id())->get();
+
+        $reviewedListings = DB::table('reviews')->join('listings', 'reviews.listing_id', '=', 'listings.id')->where('user_id', '=', auth()->id())->get();
+
+        if ($reviewedListings == null) {
+            $reviewedListings = "No reviews yet";
+        }
+        if ($blogs == null) {
+            $blogs = "No blogs yet";
+        }
+        if ($likedListings == null) {
+            $likedListings = "No liked listings yet";
+        }
+
+        return view('users.profile', compact('likedListings', 'blogs', 'reviewedListings'));
     }
 }
