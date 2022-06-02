@@ -87,7 +87,7 @@
 
                 @if ($listings->count() > 0)
 
-                    <div class="row ">
+                    <div class="row">
                         @foreach ($listings as $listing)
                             @component('components.listing-card', ['listing' => $listing])
                             @endcomponent

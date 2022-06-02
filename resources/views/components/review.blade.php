@@ -23,15 +23,17 @@
         <p class="mb-8 small">{{ $review['content'] }}</p>
 
     </div>
-    @if ($review['user_id'] == Auth::user()->id)
-        <div class="d-flex justify-content-between">
+    @auth
+        @if ($review['user_id'] == Auth::user()->id)
+            <div class="d-flex justify-content-between">
 
-            {{-- error --}}
-            <form action="/listing/{{ $review['listing_id'] }}/review/{{ $review['user_id'] }}/delete"
-                method="POST">
-                @csrf
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
-        </div>
-    @endif
+                {{-- error --}}
+                <form action="/listing/{{ $review['listing_id'] }}/review/{{ $review['user_id'] }}/delete"
+                    method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        @endif
+    @endauth
 </div>

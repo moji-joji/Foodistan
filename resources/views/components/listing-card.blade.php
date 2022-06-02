@@ -56,17 +56,31 @@
             </div>
 
             <div class="mb-1 align-items-center justify-content-between">
-                <a href="" class="heart text-decoration-none">
-                    @if (Auth::check())
+                <img src="/cronos-assets/images/eye.svg" width="30px" alt="">
 
-                        @if (Auth::user()->likes->contains($listing->id))
-                            <img src="/cronos-assets/images/heart-red.svg" width="25px" alt="">
-                        @else
-                            <img src="/cronos-assets/images/heart-black.svg" width="25px" alt="">
-                        @endif
-                    @else
-                        <img src="/cronos-assets/images/heart-black.svg" width="25px" alt="">
-                    @endif
+                {{ $listing->views }}
+                <a href="" class="heart text-decoration-none">
+
+                    @php
+                        
+                        $isLiked = 0;
+                        if (Auth::check()) {
+                            foreach (Auth::user()->likes as $item) {
+                                if ($item->listing_id == $listing->id) {
+                                    $isLiked = 1;
+                                }
+                            }
+                        
+                            if ($isLiked) {
+                                echo "<img src='/cronos-assets/images/heart-red.svg' width='25px' alt=''>";
+                            } else {
+                                echo "<img src='/cronos-assets/images/heart-black.svg' width='25px' alt='''>";
+    }
+} else {
+    echo " <img src='/cronos-assets/images/heart-black.svg' width='25px' > ";
+                        }
+                        
+                    @endphp
                 </a>
                 <span class="mx-2">{{ $listing->no_of_likes }}</span>
             </div>

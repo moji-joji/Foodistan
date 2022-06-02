@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AjaxController;
 use Clockwork\Request\Request;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
@@ -96,6 +97,8 @@ Route::get(
 );
 
 // listing resteraunt
+Route::post('/listing/{id}/toggleLike', [AjaxController::class, 'toggleLike']);
+
 Route::post('/listing/{id}/review', [ReviewController::class, 'store']);
 Route::post('/listing/{id}/review/{userId}/delete', [ReviewController::class, 'destroy']);
 
@@ -103,6 +106,3 @@ Route::post('/listing/{id}/review/{userId}/delete', [ReviewController::class, 'd
 Route::get('/listing', [ListingController::class, 'index']);
 
 Route::get('/listing/{id}', [ListingController::class, 'show']);
-
-
-// review post

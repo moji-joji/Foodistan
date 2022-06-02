@@ -29,32 +29,38 @@
         </div>
 
         <h4 class="text-center my-10">Blogs</h4>
-        @foreach ($blogs as $blog)
-            @component('components.blog-card', ['blog' => $blog])
-            @endcomponent
-        @endforeach
+
+        <div class="row">
+
+            @foreach ($blogs as $blog)
+                @component('components.blog-card', ['blog' => $blog])
+                @endcomponent
+            @endforeach
+        </div>
 
 
         <h4 class="text-center my-10">Liked Restaurants</h4>
-        @foreach ($likedListings as $likedListing)
-            <div class="h-30">
+        <div class="row">
 
+            @foreach ($likedListings as $likedListing)
                 @component('components.listing-card', ['listing' => $likedListing])
                 @endcomponent
-            </div>
+        </div>
         @endforeach
+    </div>
 
-        <h4 class="text-center my-10">Reviewed Resteraunts</h4>
+
+    <h4 class="text-center my-10">Reviewed Resteraunts</h4>
+    <div class="row ">
         @foreach ($reviewedListings as $reviewedListing)
-            <div class="h-30">
+            @component('components.listing-card', ['listing' => $reviewedListing])
+            @endcomponent
+    </div>
+    @endforeach
+    </div>
 
-                @component('components.listing-card', ['listing' => $reviewedListing])
-                @endcomponent
-            </div>
-        @endforeach
-
-        @component('components.footer')
-        @endcomponent
+    @component('components.footer')
+    @endcomponent
 
     </div>
     <script src="js/bootstrap/bootstrap.bundle.min.js"></script>

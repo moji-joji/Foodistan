@@ -5,6 +5,7 @@
     <title>Foodistan</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
@@ -13,14 +14,16 @@
 
 
     <link rel="icon" href="/favicon.ico">
+
+
 </head>
 
 <body>
 
     @component('components.header')
     @endcomponent
-
     <div class="container">
+
         <div class="mw-3xl mt-5 mb-5 mx-auto text-center">
             <div class="d-flex justify-content-center align-items-center ">
                 <a class="text-muted text-decoration-none fw-bold" style="font-size: 12px;" href="/">Home</a>
@@ -70,20 +73,34 @@
                     {{ $listing->views }}
 
                     <span class="mx-3"></span>
-                    <a href="" class="text-decoration-none">
 
-                        @if (Auth::check())
 
-                            @if (Auth::user()->likes->contains($listing->id))
-                                <img src="/cronos-assets/images/heart-red.svg" width="25px" alt="">
-                                {{ $listing->likes->count() }}
-                            @else
-                                <img src="/cronos-assets/images/heart-black.svg" width="25px" alt="">
-                            @endif
-                        @else
-                            <img src="/cronos-assets/images/heart-black.svg" width="25px" alt="">
-                        @endif
-                    </a>
+
+                    <button class="inline" onclick="toggleLikeBtn()">
+                        @php
+                            $isLiked = 0;
+                            if (Auth::check()) {
+                                foreach (Auth::user()->likes as $item) {
+                                    if ($item->listing_id == $listing->id) {
+                                        $isLiked = 1;
+                                    }
+                                }
+                            
+                                if ($isLiked) {
+                                    echo "<img id= 'likeImg'src='/cronos-assets/images/heart-red.svg' width='25px' alt=''>";
+                                } else {
+                                    echo "<img id= 'likeImg' src='/cronos-assets/images/heart-black.svg' width='25px' alt='''>";
+    }
+} else {
+    echo " <img  id= 'likeImg' src='/cronos-assets/images/heart-black.svg' width='25px' > ";
+                            }
+                            
+                        @endphp
+                        <span id="likeCount">
+
+                            {{ $listing->likes->count() }}
+                        </span>
+                    </button>
 
 
                 </div>
@@ -225,9 +242,45 @@
     @endcomponent
 
     </div>
-    <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>\
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 
+    <script>
+        function toggleLikeBtn() {
+            var token = <?php echo json_encode(csrf_token()); ?>;
+            console.log(token)
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: 'POST',
+                url: "/listing/{{ $listing->id }}/toggleLike",
+                data: "_token = 7cjPb0OG1C0FWeaZHglEHsy3eyPMOtUBKCztZ3nJ",
+                success: function(data) {
+                    console.log(data);
+                    if (data.isLiked) {
+                        console.log("liked")
+                        $('#likeImg').attr("src", "/cronos-assets/images/heart-red.svg");
+                        $('#likeCount').text(data.likeCount);
+                    } else {
+                        $('#likeImg').attr("src", "/cronos-assets/images/heart-black.svg");
+                        $('#likeCount').text(data.likeCount);
+
+
+                    }
+
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

@@ -25,20 +25,21 @@
         </p>
         <h3>Tags</h3>
         <p class="text-muted bg-gray shadow rounded w-content">{{ $blog['tags'] }}</p>
+        @auth
+            @if ($blog['user_id'] == Auth::user()->id)
+                <div class="d-flex justify-content-between">
+                    <form action="/blog/{{ $blog['id'] }}/edit" method="GET">
+                        @csrf
 
-        @if ($blog['user_id'] == Auth::user()->id)
-            <div class="d-flex justify-content-between">
-                <form action="/blog/{{ $blog['id'] }}/edit" method="GET">
-                    @csrf
+                        <button type="submit" class="btn btn-success">Edit</button>
+                    </form>
+                    <form action="/blog/{{ $blog['id'] }}/delete" method="POST">
+                        @csrf
 
-                    <button type="submit" class="btn btn-success">Edit</button>
-                </form>
-                <form action="/blog/{{ $blog['id'] }}/delete" method="POST">
-                    @csrf
-
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-            </div>
-        @endif
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            @endif
+        @endauth
 
     </div>

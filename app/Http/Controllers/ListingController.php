@@ -36,6 +36,14 @@ class ListingController extends Controller
         $reviews = DB::table('reviews')->join('users', 'reviews.user_id', '=', 'users.id')->where('listing_id', '=', $id)->get();
         $reviews = json_decode($reviews, true);
 
+        // get likes
+        $likes = DB::table('likes')->get();
+        // ubdate like count
+        $listing->no_of_likes = $listing->likes()->count();
+        $listing->views = $listing->views + 1;
+        $listing->save();
+
+
         return view('listings.listing-details', ['listing' => $listing, 'reviews' => $reviews]);
     }
 
